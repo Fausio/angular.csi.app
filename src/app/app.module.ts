@@ -17,6 +17,7 @@ import { BeneficiaryEditComponent } from './components/beneficiary/beneficiary-e
 import { BeneficiaryCreateComponent } from './components/beneficiary/beneficiary-create/beneficiary-create.component';
 
 
+
 const routes: Routes = [
   { path: 'beneficiary-index', component: BeneficiaryIndexComponent },
   { path: 'beneficiary-create', component: BeneficiaryCreateComponent },
@@ -52,7 +53,7 @@ const routes: Routes = [
     HouseholdIndexComponent,
     BeneficiaryIndexComponent,
     BeneficiaryEditComponent,
-    BeneficiaryCreateComponent
+    BeneficiaryCreateComponent 
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes)

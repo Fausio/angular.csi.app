@@ -1,17 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Navegation } from './model/navagation.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'csi';
   csI_navagation: Navegation[] = [];
 
-  constructor() {
+  constructor(private router: Router) {}
 
+
+  ngOnInit(): void {
     this.csI_navagation.push(new Navegation("beneficiary-index", "Beneficiary"));
     this.csI_navagation.push(new Navegation("household-index", "HouseHold"));
     this.csI_navagation.push(new Navegation("partner-index", "partner"));
@@ -21,7 +24,6 @@ export class AppComponent {
 
 
   onLinkClick(btnName: string): void {
-    console.log("btnClicked", btnName);
 
     this.csI_navagation.forEach((value) => {
 

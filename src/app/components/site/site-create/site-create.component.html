@@ -1,1 +1,44 @@
-<p>site-create works!</p>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Name:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Location:</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>-- Select one location -- </option>
+              <option value="Cidade de Maputo (província)">Cidade de Maputo (província)</option>
+              <option value="Maputo (província)">Maputo (província)</option>
+              <option value="Gaza">Gaza</option>
+              <option value="Inhambane">Inhambane</option>
+              <option value="Manica">Manica</option>
+              <option value="Sofala">Sofala</option>
+              <option value="Tete">Tete</option>
+              <option value="Zambézia">Zambézia</option>
+              <option value="Nampula">Nampula</option>
+              <option value="Cabo Delgado">Cabo Delgado</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">description:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button #closeModalButton type="button" class="btn btn-secondary" data-bs-dismiss="modal" v>Close</button>
+        <button type="button" class="btn btn-primary" (click)="closeModal()">Create</button>
+      </div>
+    </div>
+  </div>
+</div>

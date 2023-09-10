@@ -1,0 +1,16 @@
+table {
+  width: 100%;
+  border: 2px solid #dddddd; /* Add border to the table */
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 2px;
+}
+
+/* Style the table header row */
+th {
+  background-color: #f2f2f2;
+}
