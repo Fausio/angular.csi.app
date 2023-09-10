@@ -18,9 +18,23 @@ import { BeneficiaryCreateComponent } from './components/beneficiary/beneficiary
 
 
 const routes: Routes = [
+  { path: 'beneficiary-index', component: BeneficiaryIndexComponent },
+  { path: 'beneficiary-create', component: BeneficiaryCreateComponent },
+  { path: 'beneficiary-edit/id', component: BeneficiaryEditComponent },
+
+  { path: 'household-index', component: HouseholdIndexComponent },
+  { path: 'household-create', component: HouseholdCreateComponent },
+  { path: 'household-edit/id', component: HouseholdEditComponent },
+
+  { path: 'partner-index', component: PartnerIndexComponent },
+  { path: 'partner-create', component: PartnerCreateComponent },
+  { path: 'partner-edit/id', component: PartnerEditComponent },
+
   { path: 'site-index', component: SiteIndexComponent },
   { path: 'site-create', component: SiteCreateComponent },
   { path: 'site-edit/id', component: SiteEditComponent },
+
+
 ];
 
 
@@ -41,7 +55,7 @@ const routes: Routes = [
     BeneficiaryCreateComponent
   ],
   imports: [
-    BrowserModule,RouterModule.forRoot(routes)
+    BrowserModule, RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
