@@ -82,14 +82,14 @@ body{
 }
 
 .wrapper .main_content .header{
-  padding: 20px;
+  padding: 10px;
   background: #fff;
   color: #717171;
-  border-bottom: 1px solid #e0e4e8;
+  border-bottom: 1px solid #4039a7;
 }
 
 .wrapper .main_content .info{
-  margin: 20px;
+  margin: 10px;
   color: #717171;
   line-height: 25px;
 }
