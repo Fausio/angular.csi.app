@@ -1,6 +1,6 @@
+import { Component, OnInit } from '@angular/core';
 
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+declare var window: any;
 
 @Component({
   selector: 'app-site-index',
@@ -8,9 +8,13 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./site-index.component.css']
 })
 
-export class SiteIndexComponent {
+export class SiteIndexComponent implements OnInit {
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
 
- 
+
+
 
 }

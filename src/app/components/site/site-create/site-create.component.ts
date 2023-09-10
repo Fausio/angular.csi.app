@@ -1,5 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-site-create',
@@ -7,12 +6,5 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./site-create.component.css']
 })
 export class SiteCreateComponent {
-
-  @ViewChild('staticBackdrop') staticBackdrop:  any;
-
-  // Function to close the modal
-  closeModal() {
-    this.staticBackdrop.nativeElement.modal('hide');
-  }
 
 }
