@@ -6,6 +6,15 @@ import { AppComponent } from './app.component';
 import { SiteIndexComponent } from './components/site/site-index/site-index.component';
 import { SiteCreateComponent } from './components/site/site-create/site-create.component';
 import { SiteEditComponent } from './components/site/site-edit/site-edit.component';
+import { PartnerEditComponent } from './components/partner/partner-edit/partner-edit.component';
+import { PartnerIndexComponent } from './components/partner/partner-index/partner-index.component';
+import { PartnerCreateComponent } from './components/partner/partner-create/partner-create.component';
+import { HouseholdCreateComponent } from './components/household/household-create/household-create.component';
+import { HouseholdEditComponent } from './components/household/household-edit/household-edit.component';
+import { HouseholdIndexComponent } from './components/household/household-index/household-index.component';
+import { BeneficiaryIndexComponent } from './components/beneficiary/beneficiary-index/beneficiary-index.component';
+import { BeneficiaryEditComponent } from './components/beneficiary/beneficiary-edit/beneficiary-edit.component';
+import { BeneficiaryCreateComponent } from './components/beneficiary/beneficiary-create/beneficiary-create.component';
 
 
 const routes: Routes = [
@@ -20,7 +29,16 @@ const routes: Routes = [
     AppComponent,
     SiteIndexComponent,
     SiteCreateComponent,
-    SiteEditComponent
+    SiteEditComponent,
+    PartnerEditComponent,
+    PartnerIndexComponent,
+    PartnerCreateComponent,
+    HouseholdCreateComponent,
+    HouseholdEditComponent,
+    HouseholdIndexComponent,
+    BeneficiaryIndexComponent,
+    BeneficiaryEditComponent,
+    BeneficiaryCreateComponent
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(routes)
