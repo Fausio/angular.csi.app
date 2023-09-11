@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { Site } from 'src/app/model/site.Model';
 
 
@@ -15,22 +15,37 @@ export class SiteCreateComponent implements OnInit {
 
   CreateSiteForm: FormGroup;
 
+  constructor(private formBuilder: FormBuilder) {
+
+  }
+
 
   ngOnInit(): void {
 
-    this.CreateSiteForm = new FormGroup({
-      'SiteData': new FormGroup({
-        'Name': new FormControl('', Validators.required),
-        'Location': new FormControl('', Validators.required),
-        'Description': new FormControl('', Validators.required),
 
-      })
+    this.CreateSiteForm = this.formBuilder.group({
+
+      Name: ['', [Validators.required]],
+      Location: ['', [Validators.required]],
+      Description: ['', [Validators.required]],
+
     })
+
 
   }
 
   SubmitForm(): void {
-    this.closeModalButton.nativeElement.click();
-  }
 
+    if (this.CreateSiteForm.valid) {
+      // Form is valid, you can access form values using this.myForm.value
+      console.log('Reactive-Forms', this.CreateSiteForm.value);
+      this.closeModalButton.nativeElement.click();
+      this.CreateSiteForm.reset();
+    }
+    else {
+      // Form is invalid, handle validation errors
+    }
+
+  }
 }
+

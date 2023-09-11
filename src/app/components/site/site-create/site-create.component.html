@@ -1,21 +1,20 @@
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
+<form [formGroup]="CreateSiteForm" >
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Name:</label>
-            <input type="text" class="form-control" id="recipient-name">
+            <label for="site-name" class="col-form-label">Name:</label>
+            <input type="text" class="form-control" id="site-name" formControlName="Name">
           </div>
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Location:</label>
-            <select class="form-select" aria-label="Default select example">
+            <label for="site-location" class="col-form-label">Location:</label>
+            <select id="site-location" class="form-select" aria-label="Default select example" formControlName="Location">
               <option selected>-- Select one location -- </option>
               <option value="Cidade de Maputo (província)">Cidade de Maputo (província)</option>
               <option value="Maputo (província)">Maputo (província)</option>
@@ -30,15 +29,15 @@
             </select>
           </div>
           <div class="mb-3">
-            <label for="message-text" class="col-form-label">description:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <label for="site-description" class="col-form-label">description:</label>
+            <textarea  id="site-description" class="form-control" formControlName="Description"></textarea>
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button #closeModalButton type="button" class="btn btn-secondary" data-bs-dismiss="modal" v>Close</button>
-        <button type="button" class="btn btn-primary"  (click)="SubmitForm" >Create</button>
+        </div>
+        <div class="modal-footer">
+          <button #closeModalButton type="button" class="btn btn-secondary" data-bs-dismiss="modal" v>Close</button>
+          <button type="button" class="btn btn-primary" (click)="SubmitForm()">Create</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</form>

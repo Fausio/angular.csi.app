@@ -10,7 +10,7 @@ declare var window: any;
 
 export class SiteIndexComponent implements OnInit {
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+   
   }
 
 
