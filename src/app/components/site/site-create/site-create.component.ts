@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { Site } from 'src/app/model/site.Model';
 
@@ -14,8 +14,9 @@ export class SiteCreateComponent implements OnInit {
   @ViewChild('closeModalButton') closeModalButton: any;
 
   CreateSiteForm: FormGroup;
+  SiteNameManualRequered: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private renderer: Renderer2) {
 
   }
 
@@ -25,7 +26,7 @@ export class SiteCreateComponent implements OnInit {
 
     this.CreateSiteForm = this.formBuilder.group({
 
-      Name: ['', [Validators.required]],
+      Name: [null, [Validators.required]],
       Location: ['', [Validators.required]],
       Description: ['', [Validators.required]],
 
@@ -35,17 +36,39 @@ export class SiteCreateComponent implements OnInit {
   }
 
   SubmitForm(): void {
+    this.SiteNameManualRequered = false;
 
     if (this.CreateSiteForm.valid) {
       // Form is valid, you can access form values using this.myForm.value
-      console.log('Reactive-Forms', this.CreateSiteForm.value);
+
       this.closeModalButton.nativeElement.click();
-      this.CreateSiteForm.reset();
+
     }
     else {
       // Form is invalid, handle validation errors
+   /*    console.log("this.CreateSiteForm.value.Name", this.CreateSiteForm.get('Name')?.value)
+      if (this.CreateSiteForm.get('Name')?.value == null || this.CreateSiteForm.get('Name')?.value == '') {
+
+        // this.SiteNameManualRequered = true;
+
+      } */
+
+      alert("All the fields are requered");
+      /*       for (const controlName in this.CreateSiteForm) {
+              const element = document.getElementById(controlName);
+      
+              if (element) {
+      
+                this.renderer.addClass(element, 'invalid-field')
+              }
+            } */
     }
 
+  }
+
+
+  onCloseModal(): void {
+    this.CreateSiteForm.reset();
   }
 }
 

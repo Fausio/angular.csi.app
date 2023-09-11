@@ -1,4 +1,4 @@
-<form [formGroup]="CreateSiteForm" >
+<form [formGroup]="CreateSiteForm" (ngSubmit)="SubmitForm()" >
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -10,7 +10,11 @@
         <div class="modal-body">
           <div class="mb-3">
             <label for="site-name" class="col-form-label">Name:</label>
-            <input type="text" class="form-control" id="site-name" formControlName="Name">
+            <input [ngClass]="{ 'invalid-field': CreateSiteForm.get('Name')?.invalid && CreateSiteForm.get('Name')?.touched }" type="text" class="form-control" id="site-name" formControlName="Name">
+            <div *ngIf="CreateSiteForm.get('Name')?.hasError('required') && CreateSiteForm.get('Name')?.touched || SiteNameManualRequered" class="error-message">
+              Site Name is Required
+            </div>
+          
           </div>
           <div class="mb-3">
             <label for="site-location" class="col-form-label">Location:</label>
@@ -34,7 +38,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button #closeModalButton type="button" class="btn btn-secondary" data-bs-dismiss="modal" v>Close</button>
+          <button #closeModalButton type="button" class="btn btn-secondary" data-bs-dismiss="modal"  (click)="onCloseModal()">Close</button>
           <button type="button" class="btn btn-primary" (click)="SubmitForm()">Create</button>
         </div>
       </div>

@@ -1,0 +1,11 @@
+/* Add styles for invalid fields */
+.invalid-field {
+    border: 1px solid red;
+  }
+  
+  /* Style for error messages */
+  .error-message {
+    color: red;
+ /*    font-size: 12px; */
+    margin-top: 4px;
+  }
