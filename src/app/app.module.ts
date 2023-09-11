@@ -16,6 +16,7 @@ import { BeneficiaryIndexComponent } from './components/beneficiary/beneficiary-
 import { BeneficiaryEditComponent } from './components/beneficiary/beneficiary-edit/beneficiary-edit.component';
 import { BeneficiaryCreateComponent } from './components/beneficiary/beneficiary-create/beneficiary-create.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -56,7 +57,8 @@ const routes: Routes = [
     BeneficiaryCreateComponent 
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(routes)
+    BrowserModule, RouterModule.forRoot(routes),
+    FormsModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,7 +2,7 @@ export class Navegation {
   constructor(
     public link: string,
     public name: string,
-    public activeCss?: string ) { }
+    public activeCss?: string) { }
 }
 
 
