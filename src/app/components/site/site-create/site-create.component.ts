@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-site-create',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./site-create.component.css']
 })
 export class SiteCreateComponent {
+
+  @ViewChild('closeModalButton') closeModalButton: any;
+
+  SubmitForm(): void {
+    this.closeModalButton.nativeElement.click();
+  }
 
 }
